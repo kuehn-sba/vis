@@ -40831,7 +40831,11 @@ function Timeline(container, items, groups, options) {
   }
 
   // draw for the first time
-  this._redraw();
+  // @fix - delayed initial drawing RIO
+  var self = this;
+  setTimeout(function() {
+      self._redraw();
+  }, 1000);
 }
 
 // Extend the functionality from Core
