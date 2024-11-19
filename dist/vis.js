@@ -6732,7 +6732,11 @@ TimeAxis.prototype.redraw = function () {
 
   foreground.style.height = this.props.height + 'px';
 
-  this._repaintLabels();
+  // @fix - issue https://github.com/almende/vis/issues/2023 RIO
+  var self = this;
+  setTimeout(function() {
+    self._repaintLabels();
+  }, 0);
 
   // put DOM online again (at the same place)
   if (foregroundNextSibling) {
