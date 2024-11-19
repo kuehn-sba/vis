@@ -40716,11 +40716,12 @@ function Timeline(container, items, groups, options) {
     },
     hiddenDates: [],
     util: {
+      // @fix - timeAxis.step undefined
       getScale: function getScale() {
-        return me.timeAxis.step.scale;
+        return me.timeAxis.step ? me.timeAxis.step.scale : null;
       },
       getStep: function getStep() {
-        return me.timeAxis.step.step;
+        return me.timeAxis.step ? me.timeAxis.step.step : null;
       },
 
       toScreen: me._toScreen.bind(me),
