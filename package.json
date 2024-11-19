@@ -25,14 +25,6 @@
     "browser"
   ],
   "main": "./dist/vis.js",
-  "scripts": {
-    "test": "mocha --compilers js:babel-core/register",
-    "test-cov": "nyc --reporter=lcov mocha --compilers js:babel-core/register",
-    "build": "gulp",
-    "lint": "gulp lint",
-    "watch": "gulp watch",
-    "watch-dev": "gulp watch --bundle"
-  },
   "dependencies": {
     "emitter-component": "^1.1.1",
     "moment": "^2.18.1",
